@@ -74,8 +74,8 @@ export const professionalRecord = [
     videoPoster: "/assets/eli-elias-celebration.jpg",
     photos: [
       "/assets/eli-elias-celebration.jpg", // Celebration scream - FIRST
-      "/assets/eli-elias-striking.jpg", // Striking action
-      "/assets/hero-final.jpg", // Hero image
+      "/assets/eli-elias-backflip.jpg", // BACKFLIP - EPIC!
+      "/assets/eli-elias-striking.jpg", // Body kick
       "/assets/eli-elias-final-v2.jpg" // Victory pose - LAST
     ]
   }
