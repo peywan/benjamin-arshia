@@ -1,0 +1,41 @@
+.highlights-section {
+    background-color: var(--bg-color);
+    padding: var(--space-xxl) var(--space-md);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.highlights-container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.highlight-item {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text-muted);
+}
+
+.highlight-item.active {
+    opacity: 1;
+    transform: translateY(0);
+    color: var(--text-color);
+    /* Brighten up when active */
+}
+
+/* Add a separator line concept or just space */
+.highlight-item:last-child {
+    margin-bottom: 0;
+}

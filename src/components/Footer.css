@@ -1,0 +1,22 @@
+.footer {
+    padding: var(--space-xl) var(--space-md);
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--font-size-base);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+}
+
+.footer-name {
+    color: var(--text-color);
+    font-weight: 500;
+}

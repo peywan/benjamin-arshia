@@ -1,0 +1,62 @@
+.profile-section {
+    background-color: var(--bg-color);
+    padding: var(--space-xxl) var(--space-md);
+    color: var(--text-color);
+    position: relative;
+    z-index: 10;
+}
+
+.profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg) var(--space-xl);
+    width: 100%;
+}
+
+.profile-item {
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.profile-value {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.profile-item.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Specific styling for Team to emphasize status */
+.team-primary {
+    color: var(--text-color);
+}
+
+.team-former {
+    color: var(--text-muted);
+    font-size: var(--font-size-base);
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+}

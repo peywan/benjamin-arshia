@@ -1,0 +1,229 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    /* Align text to bottom or center as needed */
+    justify-content: flex-start;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Hero.css Updates */
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    /* Moved point of focus slightly up relative to container center */
+    opacity: 0;
+    animation: fadeIn 1.5s var(--transition-slow) forwards, kenBurns 20s ease-out infinite alternate;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(5, 5, 5, 0.2) 0%,
+            rgba(5, 5, 5, 0.3) 40%,
+            rgba(5, 5, 5, 0.6) 80%,
+            var(--bg-color) 100%);
+    z-index: 2;
+    /* Add a subtle colored ambient glow */
+    box-shadow: inset 0 0 150px rgba(40, 60, 100, 0.15);
+}
+
+/* Film grain effect */
+.hero-grain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 4;
+    padding: var(--space-xl) var(--space-md);
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0;
+    animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center vertically for maximum impact */
+    align-items: flex-end;
+    /* Right align */
+    height: 100%;
+    padding-bottom: 100px;
+}
+
+.hero-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.85;
+    margin-bottom: var(--space-lg);
+    align-items: flex-end;
+    /* Ensure text creates a hard edge on the right */
+}
+
+.hero-given-name,
+.hero-last-name {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    text-align: right;
+}
+
+.hero-fight-name {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(6rem, 15vw, 16rem);
+    /* MASSIVE */
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    /* Outline style often seen in combat sports */
+    margin: 0;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    text-align: right;
+    /* Optional: Fill it on hover or animation? Let's keep it outline for style distinction */
+}
+
+/* Make "ARSHIA" filled for emphasis if desired, or keep outline. Let's make it filled white for power according to request "Brutal" */
+.hero-fight-name {
+    color: #fff;
+    -webkit-text-stroke: 0;
+    text-shadow: 4px 4px 0px #000;
+    /* Hard shadow */
+}
+
+.hero-record-display {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: var(--space-sm) var(--space-lg);
+    border-right: 4px solid #fff;
+    /* Switch to border-right */
+    border-left: none;
+    margin-bottom: var(--space-xl);
+    transform: skewX(-10deg);
+    /* Aggressive angle */
+}
+
+.record-label {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transform: skewX(10deg);
+    /* Counter-skew text */
+}
+
+.record-value {
+    font-family: 'Anton', sans-serif;
+    font-size: 3rem;
+    color: #fff;
+    line-height: 1;
+    transform: skewX(10deg);
+    /* Counter-skew text */
+}
+
+.hero-details {
+    display: flex;
+    gap: var(--space-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: var(--space-md);
+}
+
+.hero-detail-item {
+    color: var(--text-color);
+}
+
+.hero-detail-label {
+    color: var(--text-muted);
+    margin-right: 8px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .hero-content {
+        padding-bottom: var(--space-xxl);
+    }
+
+    .hero-fight-name {
+        font-size: 15vw;
+        /* Truly massive on mobile */
+    }
+
+    .hero-given-name {
+        font-size: 1rem;
+    }
+
+    .hero-details {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+}

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --bg-color: #050505;
+  --text-color: #F5F5F7;
+  --text-muted: #888888;
+  --accent-color: #2A2A2A;
+  --border-color: #1F1F1F;
+  --highlight-color: #FFFFFF;
+
+  /* Spacing */
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+  --space-xxl: 120px;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-base: 16px;
+  --font-size-lg: 24px;
+  --font-size-xl: 48px;
+  --font-size-hero: clamp(3rem, 5vw, 6rem);
+
+  /* Transitions */
+  --transition-slow: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 0.3s ease-out;
+}

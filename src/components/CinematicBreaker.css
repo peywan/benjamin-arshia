@@ -1,0 +1,97 @@
+.cinematic-breaker {
+    height: 85vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+.breaker-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.6;
+    transform: scale(1);
+    will-change: transform;
+    transition: transform 0.5s ease-out;
+}
+
+.cinematic-breaker:hover .breaker-image {
+    transform: scale(1.05);
+    /* Interactive feel */
+}
+
+/* Specific adjustments based on image nature if needed */
+.breaker-image.top-focus {
+    object-position: center 20%;
+}
+
+.breaker-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient to ensure text pops */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+    z-index: 2;
+}
+
+.breaker-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: var(--space-md);
+    max-width: 900px;
+}
+
+.breaker-subtitle {
+    display: block;
+    font-family: 'Teko', sans-serif;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    color: var(--highlight-color);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.breaker-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(4rem, 10vw, 8rem);
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.8s ease-out 0.2s;
+}
+
+/* Animation on View */
+.cinematic-breaker.active .breaker-subtitle {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cinematic-breaker.active .breaker-title {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Mobile Tweak */
+@media (max-width: 768px) {
+    .cinematic-breaker {
+        height: 60vh;
+    }
+}
