@@ -33,6 +33,11 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
+
+            <div className="scroll-indicator" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
+                <span className="scroll-text">Scroll</span>
+                <div className="scroll-line"></div>
+            </div>
         </section>
     );
 };

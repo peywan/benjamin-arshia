@@ -57,7 +57,8 @@ export const professionalRecord = [
     photos: [
       "/assets/kalandadze-final-win.jpg",
       "/assets/kalandadze-action-1.jpg",
-      "/assets/kalandadze-clinch.jpg"
+      "/assets/kalandadze-clinch.jpg",
+      "/assets/kalandadze-stance.jpg"
     ]
   },
   {

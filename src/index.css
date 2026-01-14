@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent; /* Removes blue highlight on mobile touch */
 }
 
 html {
@@ -11,15 +12,42 @@ html {
   background-color: var(--bg-color);
   color: var(--text-color);
   scroll-behavior: smooth;
-  font-size: var(--font-size-base);
+  font-size: 16px; /* Base size reset */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Critical for mobile */
 }
 
 body {
   width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
   line-height: 1.5;
+  background-color: var(--bg-color);
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 a {
