@@ -35,25 +35,29 @@ export const professionalRecord = [
     method: "Unanimous Decision",
     round: 3,
     time: "5:00",
-    highlightBroadcast: true, // Enabled for consistency
+    highlightBroadcast: true,
     videoPoster: "/assets/safi-hq-win.jpg",
     photos: [
-      "/assets/safi-hq-win.jpg"
+      "/assets/safi-hq-win.jpg", // The Main winning moment (Keep as #1)
+      "/assets/safi-action-1.jpg", // New action shot 1
+      "/assets/safi-striking.jpg" // New action shot 2
     ]
   },
   {
     id: "pro-2",
-    date: "2025-05-24", // Originally 24 May 2025
+    date: "2025-05-24",
     event: "FCR 24",
     opponent: "Nika Kalandadze",
     result: "Win",
     method: "Unanimous Decision",
     round: 3,
     time: "5:00",
-    highlightBroadcast: true, // Enabled layout requested by user
+    highlightBroadcast: true,
     videoPoster: "/assets/kalandadze-final-win.jpg",
     photos: [
-      "/assets/kalandadze-final-win.jpg"
+      "/assets/kalandadze-final-win.jpg",
+      "/assets/kalandadze-action-1.jpg",
+      "/assets/kalandadze-clinch.jpg"
     ]
   },
   {
@@ -65,12 +69,12 @@ export const professionalRecord = [
     method: "TKO (Punches)",
     round: 1,
     time: "0:51",
-    highlightBroadcast: true, // Special visual emphasis
-    // User requested video but provided images. We use the most impactful image as the "video" placeholder/poster.
-    videoPoster: "/assets/eli-elias-final.png",
-    videoSrc: "", // User can drop file here later
+    highlightBroadcast: true,
+    videoPoster: "/assets/eli-elias-final-v2.jpg",
     photos: [
-      "/assets/eli-elias-final.png"
+      "/assets/eli-elias-final-v2.jpg", // The GOOD image (IMG_4926)
+      "/assets/eli-elias-1.jpg",
+      "/assets/eli-elias-2.jpg"
     ]
   }
 ];
