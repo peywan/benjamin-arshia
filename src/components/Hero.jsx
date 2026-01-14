@@ -20,6 +20,14 @@ const Hero = () => {
                 <div className="hero-grain"></div>
             </div>
 
+            <div className="hero-quote">
+                <span className="quote-mark">"</span>
+                <p className="quote-text">
+                    I don't fight for the money.<br/>
+                    I fight for my legacy.
+                </p>
+            </div>
+
             <div className="hero-content">
                 <h1 className="hero-fight-name">{identity.fightName}</h1>
                 <span className="hero-given-name">{identity.givenName}</span>

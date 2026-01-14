@@ -5,10 +5,64 @@
     overflow: hidden;
     display: flex;
     align-items: flex-end;
-    /* Align text to bottom or center as needed */
     justify-content: flex-start;
     color: var(--text-color);
     background-color: var(--bg-color);
+}
+
+/* Handwritten Quote - Signature Style */
+.hero-quote {
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    z-index: 5;
+    max-width: 520px;
+    opacity: 0;
+    transform: translateX(-30px) rotate(-1deg);
+    animation: fadeInQuote 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+}
+
+.quote-mark {
+    display: none;
+}
+
+.quote-text {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 600;
+    line-height: 1.3;
+    color: #fff;
+    text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.9),
+        0 4px 20px rgba(0, 0, 0, 0.6);
+    letter-spacing: 0.01em;
+    margin: 0;
+    transform: rotate(-1deg);
+    position: relative;
+}
+
+/* Handwritten underline effect */
+.quote-text::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    transform: rotate(-0.5deg);
+    opacity: 0.6;
+}
+
+@keyframes fadeInQuote {
+    from {
+        opacity: 0;
+        transform: translateX(-30px) rotate(-1deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(-1deg);
+    }
 }
 
 .hero-background {
@@ -77,8 +131,22 @@
             rgba(5, 5, 5, 0.6) 80%,
             var(--bg-color) 100%);
     z-index: 2;
-    /* Add a subtle colored ambient glow */
-    box-shadow: inset 0 0 150px rgba(40, 60, 100, 0.15);
+}
+
+/* Corner Vignettes - Elegant framing */
+.hero-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at top left, rgba(0, 0, 0, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at top right, rgba(0, 0, 0, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.6) 0%, transparent 40%);
+    pointer-events: none;
 }
 
 /* Film grain effect */
@@ -253,7 +321,6 @@
 
     .hero-fight-name {
         font-size: 15vw;
-        /* Truly massive on mobile */
     }
 
     .hero-given-name {
@@ -263,5 +330,36 @@
     .hero-details {
         flex-direction: column;
         gap: var(--space-sm);
+    }
+
+    /* Quote mobile styling */
+    .hero-quote {
+        top: 80px;
+        left: 20px;
+        right: 20px;
+        max-width: calc(100% - 40px);
+    }
+
+    .quote-text {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+
+    .quote-text::after {
+        width: 50%;
+        bottom: -6px;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-quote {
+        top: 90px;
+        left: 40px;
+        max-width: 450px;
+    }
+
+    .quote-text {
+        font-size: 2.2rem;
     }
 }
