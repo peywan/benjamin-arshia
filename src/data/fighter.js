@@ -71,11 +71,11 @@ export const professionalRecord = [
     round: 1,
     time: "0:51",
     highlightBroadcast: true,
-    videoPoster: "/assets/eli-elias-celebration.jpg",
+    videoPoster: "/assets/eli-elias-celebration.jpg.JPG",
     photos: [
-      "/assets/eli-elias-celebration.jpg", // Celebration scream - FIRST
-      "/assets/eli-elias-backflip.jpg", // BACKFLIP - EPIC!
-      "/assets/eli-elias-striking.jpg", // Body kick
+      "/assets/eli-elias-celebration.jpg.JPG", // Celebration scream - FIRST
+      "/assets/eli-elias-backflip.jpg.JPG", // BACKFLIP - EPIC!
+      "/assets/eli-elias-striking.jpg.JPG", // Body kick
       "/assets/eli-elias-final-v2.jpg" // Victory pose - LAST
     ]
   }
