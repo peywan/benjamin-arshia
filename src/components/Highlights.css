@@ -7,35 +7,55 @@
     align-items: center;
     justify-content: center;
     min-height: 60vh;
+    position: relative;
 }
 
 .highlights-container {
-    max-width: 800px;
+    max-width: 900px;
     width: 100%;
 }
 
 .highlight-item {
-    font-size: clamp(1.5rem, 4vw, 3rem);
-    font-weight: 700;
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 400;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: var(--space-xl);
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--text-muted);
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .highlight-item.active {
     opacity: 1;
     transform: translateY(0);
-    color: var(--text-color);
-    /* Brighten up when active */
+    color: #fff;
 }
 
-/* Add a separator line concept or just space */
 .highlight-item:last-child {
     margin-bottom: 0;
+}
+
+/* Add subtle gradient text effect on active */
+.highlight-item.active {
+    background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@media (max-width: 768px) {
+    .highlights-section {
+        min-height: 50vh;
+        padding: var(--space-xl) var(--space-md);
+    }
+    
+    .highlight-item {
+        font-size: clamp(1.8rem, 8vw, 3rem);
+        margin-bottom: var(--space-lg);
+    }
 }
