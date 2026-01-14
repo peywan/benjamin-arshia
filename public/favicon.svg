@@ -1,0 +1,60 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#000000"/>
+  
+  <!-- Octagon (MMA Cage inspired) -->
+  <path d="M256 60 L390 110 L450 244 L390 378 L256 428 L122 378 L62 244 L122 110 Z" 
+        stroke="#DC2626" 
+        stroke-width="8" 
+        fill="none"/>
+  
+  <!-- Inner Octagon -->
+  <path d="M256 100 L360 140 L410 244 L360 348 L256 388 L152 348 L102 244 L152 140 Z" 
+        stroke="#DC2626" 
+        stroke-width="3" 
+        fill="none" 
+        opacity="0.4"/>
+  
+  <!-- "A" Symbol (stylized as a fighter stance) -->
+  <g transform="translate(256, 256)">
+    <!-- Main A -->
+    <path d="M -50 80 L 0 -60 L 50 80" 
+          stroke="#FFFFFF" 
+          stroke-width="20" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"
+          fill="none"/>
+    <!-- A crossbar -->
+    <line x1="-30" y1="20" x2="30" y2="20" 
+          stroke="#FFFFFF" 
+          stroke-width="18" 
+          stroke-linecap="round"/>
+    
+    <!-- Accent lines (speed/impact effect) -->
+    <line x1="-80" y1="-40" x2="-60" y2="-40" 
+          stroke="#DC2626" 
+          stroke-width="4" 
+          stroke-linecap="round"/>
+    <line x1="-80" y1="-20" x2="-65" y2="-20" 
+          stroke="#DC2626" 
+          stroke-width="4" 
+          stroke-linecap="round"/>
+    <line x1="60" y1="-40" x2="80" y2="-40" 
+          stroke="#DC2626" 
+          stroke-width="4" 
+          stroke-linecap="round"/>
+    <line x1="65" y1="-20" x2="80" y2="-20" 
+          stroke="#DC2626" 
+          stroke-width="4" 
+          stroke-linecap="round"/>
+  </g>
+  
+  <!-- Bottom text -->
+  <text x="256" y="460" 
+        font-family="Arial, sans-serif" 
+        font-size="32" 
+        font-weight="900" 
+        fill="#DC2626" 
+        text-anchor="middle" 
+        letter-spacing="8">ARSHIA</text>
+</svg>
