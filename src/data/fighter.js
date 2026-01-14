@@ -38,9 +38,9 @@ export const professionalRecord = [
     highlightBroadcast: true,
     videoPoster: "/assets/safi-hq-win.jpg",
     photos: [
-      "/assets/safi-hq-win.jpg", // The Main winning moment (Keep as #1)
-      "/assets/safi-action-1.jpg", // New action shot 1
-      "/assets/safi-striking.jpg" // New action shot 2
+      "/assets/safi-hq-win.jpg", // Winning moment
+      "/assets/safi-action-1.jpg", // Action shot
+      "/assets/safi-striking.jpg" // Striking action
     ]
   },
   {
@@ -72,9 +72,9 @@ export const professionalRecord = [
     highlightBroadcast: true,
     videoPoster: "/assets/eli-elias-final-v2.jpg",
     photos: [
-      "/assets/eli-elias-final-v2.jpg", // The GOOD image (IMG_4926)
-      "/assets/eli-elias-1.jpg",
-      "/assets/eli-elias-2.jpg"
+      "/assets/eli-elias-final-v2.jpg", // Victory pose
+      "/assets/eli-elias-1.jpg", // Action shot
+      "/assets/hero-final.jpg" // Hero image
     ]
   }
 ];

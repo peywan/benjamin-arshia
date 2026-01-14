@@ -1,6 +1,71 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './CareerRecord.css';
 import { professionalRecord, amateurRecord, fighterProfile } from '../data/fighter';
+
+const FightGallery = ({ photos }) => {
+    const galleryRef = useRef(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const handleScroll = () => {
+        if (!galleryRef.current) return;
+        const scrollLeft = galleryRef.current.scrollLeft;
+        const itemWidth = galleryRef.current.querySelector('.gallery-image')?.offsetWidth || 500;
+        const gap = 16; // var(--space-md)
+        const newIndex = Math.round(scrollLeft / (itemWidth + gap));
+        setActiveIndex(Math.min(newIndex, photos.length - 1));
+    };
+
+    const scrollToIndex = (index) => {
+        if (!galleryRef.current) return;
+        const itemWidth = galleryRef.current.querySelector('.gallery-image')?.offsetWidth || 500;
+        const gap = 16;
+        galleryRef.current.scrollTo({
+            left: index * (itemWidth + gap),
+            behavior: 'smooth'
+        });
+    };
+
+    return (
+        <div className="fight-gallery-wrapper">
+            <div 
+                className="fight-gallery" 
+                ref={galleryRef}
+                onScroll={handleScroll}
+            >
+                {photos.map((photo, index) => (
+                    <img
+                        key={index}
+                        src={photo}
+                        alt={`Action shot ${index + 1}`}
+                        className="gallery-image"
+                        onClick={() => window.open(photo, '_blank')}
+                    />
+                ))}
+            </div>
+            
+            {photos.length > 1 && (
+                <>
+                    <div className="gallery-indicators">
+                        {photos.map((_, index) => (
+                            <button
+                                key={index}
+                                className={`gallery-dot ${index === activeIndex ? 'active' : ''}`}
+                                onClick={() => scrollToIndex(index)}
+                                aria-label={`Go to image ${index + 1}`}
+                            />
+                        ))}
+                    </div>
+                    <div className="swipe-hint">
+                        <span>Swipe</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </>
+            )}
+        </div>
+    );
+};
 
 const TimelineItem = ({ fight }) => {
     const itemRef = useRef(null);
@@ -35,9 +100,6 @@ const TimelineItem = ({ fight }) => {
         };
     }, []);
 
-    // Use videoPoster if available, otherwise fallback
-    const displayImage = fight.videoPoster || (fight.photos && fight.photos.length > 0 ? fight.photos[0] : "/assets/uploaded_image_3_1768410792000.jpg");
-
     return (
         <div
             ref={itemRef}
@@ -61,39 +123,10 @@ const TimelineItem = ({ fight }) => {
                     </div>
                 </div>
 
-                {fight.highlightBroadcast && (
+                {fight.highlightBroadcast && fight.photos && fight.photos.length > 0 && (
                     <div className="fight-media-container">
-                        <div className="fight-media">
-                            {/* Video Placeholder or Poster */}
-                            {fight.videoSrc ? (
-                                <video
-                                    src={fight.videoSrc}
-                                    poster={fight.videoPoster}
-                                    autoPlay
-                                    muted
-                                    loop
-                                    playsInline
-                                    className="video-player"
-                                />
-                            ) : (
-                                <img src={displayImage} alt="Fight Highlight" className="video-placeholder" />
-                            )}
-                        </div>
-
-                        {/* Mini Gallery for extra shots */}
-                        {fight.photos && fight.photos.length > 1 && (
-                            <div className="fight-gallery">
-                                {fight.photos.slice(1).map((photo, index) => (
-                                    <img
-                                        key={index}
-                                        src={photo}
-                                        alt={`Action shot ${index + 1}`}
-                                        className="gallery-image"
-                                        onClick={() => window.open(photo, '_blank')} // Simple lightbox fallback
-                                    />
-                                ))}
-                            </div>
-                        )}
+                        {/* All photos in one horizontal carousel */}
+                        <FightGallery photos={fight.photos} />
                     </div>
                 )}
             </div>
