@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './CinematicBreaker.css';
 
-const CinematicBreaker = ({ image, title, subtitle, focus = 'center' }) => {
+const CinematicBreaker = ({ image, title, subtitle, focus = 'center', mobileFocus = 'center' }) => {
     const sectionRef = useRef(null);
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const CinematicBreaker = ({ image, title, subtitle, focus = 'center' }) => {
             <img
                 src={image}
                 alt={title}
-                className={`breaker-image ${focus === 'top' ? 'top-focus' : ''}`}
+                className={`breaker-image ${focus === 'top' ? 'top-focus' : ''} mobile-${mobileFocus}`}
             />
             <div className="breaker-overlay"></div>
 

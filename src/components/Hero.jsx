@@ -3,7 +3,7 @@ import './Hero.css';
 import { fighterProfile } from '../data/fighter';
 
 // Using the portrait image
-const HERO_IMAGE_PATH = '/assets/hero-v2.jpg';
+const HERO_IMAGE_PATH = '/assets/hero-final.jpg';
 
 const Hero = () => {
     const { identity } = fighterProfile;

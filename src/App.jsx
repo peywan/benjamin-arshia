@@ -6,10 +6,12 @@ import Highlights from './components/Highlights';
 import Footer from './components/Footer';
 import Transition from './components/Transition';
 import CinematicBreaker from './components/CinematicBreaker';
+import CinematicOverlay from './components/CinematicOverlay';
 
 function App() {
   return (
     <div className="app-container">
+      <CinematicOverlay />
       {/* 1. Hero */}
       <Hero />
 
@@ -18,9 +20,11 @@ function App() {
 
       {/* BREAKER 1: THE MINDSET */}
       <CinematicBreaker
-        image="/assets/fight-detail-blue.png"
+        image="/assets/kalandadze-clinch.jpg"
         subtitle="VISION & DISCIPLINE"
         title="THE MINDSET"
+        mobileFocus="center"
+        focus="top" /* Show faces/upper body, not feet */
       />
 
       {/* 3. Record */}

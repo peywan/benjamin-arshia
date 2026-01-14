@@ -1,7 +1,12 @@
 .cinematic-breaker {
     height: 85vh;
-    width: 100%;
+    width: 100vw;
+    /* Force full viewport width */
     position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -15,6 +20,9 @@
     left: 0;
     width: 100%;
     height: 100%;
+    min-width: 100%;
+    /* Enforce coverage */
+    min-height: 100%;
     object-fit: cover;
     object-position: center;
     opacity: 0.6;
@@ -93,5 +101,29 @@
 @media (max-width: 768px) {
     .cinematic-breaker {
         height: 60vh;
+    }
+
+    .breaker-title {
+        font-size: 15vw;
+        /* Massive on mobile */
+        line-height: 0.8;
+        width: 100%;
+        padding: 0 10px;
+        /* Ensure no horizontal scrolling but max width */
+    }
+
+    /* Mobile-specific image adjustments */
+    /* By default center might cut off subject in landscape photos */
+    .breaker-image {
+        object-position: center top;
+    }
+
+    /* Specific overrides */
+    .breaker-image.mobile-left {
+        object-position: 20% center;
+    }
+
+    .breaker-image.mobile-right {
+        object-position: 80% center;
     }
 }

@@ -62,20 +62,37 @@ const TimelineItem = ({ fight }) => {
                 </div>
 
                 {fight.highlightBroadcast && (
-                    <div className="fight-media">
-                        {/* Video Placeholder or Poster */}
-                        {fight.videoSrc ? (
-                            <video
-                                src={fight.videoSrc}
-                                poster={fight.videoPoster}
-                                autoPlay
-                                muted
-                                loop
-                                playsInline
-                                className="video-player"
-                            />
-                        ) : (
-                            <img src={displayImage} alt="Fight Highlight" className="video-placeholder" />
+                    <div className="fight-media-container">
+                        <div className="fight-media">
+                            {/* Video Placeholder or Poster */}
+                            {fight.videoSrc ? (
+                                <video
+                                    src={fight.videoSrc}
+                                    poster={fight.videoPoster}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="video-player"
+                                />
+                            ) : (
+                                <img src={displayImage} alt="Fight Highlight" className="video-placeholder" />
+                            )}
+                        </div>
+
+                        {/* Mini Gallery for extra shots */}
+                        {fight.photos && fight.photos.length > 1 && (
+                            <div className="fight-gallery">
+                                {fight.photos.slice(1).map((photo, index) => (
+                                    <img
+                                        key={index}
+                                        src={photo}
+                                        alt={`Action shot ${index + 1}`}
+                                        className="gallery-image"
+                                        onClick={() => window.open(photo, '_blank')} // Simple lightbox fallback
+                                    />
+                                ))}
+                            </div>
                         )}
                     </div>
                 )}

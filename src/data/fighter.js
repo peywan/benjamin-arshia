@@ -36,9 +36,9 @@ export const professionalRecord = [
     round: 3,
     time: "5:00",
     highlightBroadcast: true, // Enabled for consistency
-    videoPoster: "/assets/safi-official-win.jpg",
+    videoPoster: "/assets/safi-hq-win.jpg",
     photos: [
-      "/assets/safi-official-win.jpg"
+      "/assets/safi-hq-win.jpg"
     ]
   },
   {
@@ -51,9 +51,9 @@ export const professionalRecord = [
     round: 3,
     time: "5:00",
     highlightBroadcast: true, // Enabled layout requested by user
-    videoPoster: "/assets/kalandadze-official-win.jpg", // Added as requested to ensure it appears
+    videoPoster: "/assets/kalandadze-final-win.jpg",
     photos: [
-      "/assets/kalandadze-official-win.jpg"
+      "/assets/kalandadze-final-win.jpg"
     ]
   },
   {
@@ -67,11 +67,10 @@ export const professionalRecord = [
     time: "0:51",
     highlightBroadcast: true, // Special visual emphasis
     // User requested video but provided images. We use the most impactful image as the "video" placeholder/poster.
-    videoPoster: "/assets/eli-elias-1.jpg",
+    videoPoster: "/assets/eli-elias-final.png",
     videoSrc: "", // User can drop file here later
     photos: [
-      "/assets/eli-elias-1.jpg",
-      "/assets/eli-elias-2.jpg"
+      "/assets/eli-elias-final.png"
     ]
   }
 ];
