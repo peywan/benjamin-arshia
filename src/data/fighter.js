@@ -56,9 +56,10 @@ export const professionalRecord = [
     videoPoster: "/assets/nikakalandadze3.JPG",
     photos: [
       "/assets/nikakalandadze3.JPG", // Action 3 - Position 1
-      "/assets/kalandadze-action-1.jpg", // Action 1 - Position 2
-      "/assets/nikakalandadze2.JPG", // Action 2 - Position 3
-      "/assets/kalandadze-final-win.jpg" // Victory - Position 4
+      "/assets/kalandadze-1.jpg", // New high quality - Position 2
+      "/assets/IMG_4921.jpeg", // New image - Position 3
+      "/assets/nikakalandadze2.JPG", // Action 2 - Position 4
+      "/assets/kalandadze-final-win.jpg" // Victory - Position 5
     ]
   },
   {
