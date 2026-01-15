@@ -7,11 +7,14 @@ import Footer from './components/Footer';
 import Transition from './components/Transition';
 import CinematicBreaker from './components/CinematicBreaker';
 import CinematicOverlay from './components/CinematicOverlay';
+import Preloader from './components/Preloader';
 
 function App() {
   return (
-    <div className="app-container">
-      <CinematicOverlay />
+    <>
+      <Preloader />
+      <div className="app-container">
+        <CinematicOverlay />
       {/* 1. Hero */}
       <Hero />
 
@@ -51,7 +54,8 @@ function App() {
 
       {/* 5. Footer */}
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }
 

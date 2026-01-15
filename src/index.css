@@ -19,16 +19,6 @@ html {
   overflow-x: hidden;
 }
 
-/* Prevent FOUT (Flash of Unstyled Text) */
-html:not(.fonts-loaded) {
-  opacity: 0;
-}
-
-html.fonts-loaded {
-  opacity: 1;
-  transition: opacity 0.3s ease-in;
-}
-
 body {
   width: 100%;
   max-width: 100%;
