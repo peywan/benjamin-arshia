@@ -58,16 +58,16 @@
 /* Timeline Item - The Stage */
 .timeline-item {
     position: relative;
-    margin-bottom: 120px; /* Generous spacing */
-    padding-left: 60px; /* More space from line */
-    opacity: 0.2;
-    transform: translateY(40px);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-bottom: 120px;
+    padding-left: 60px;
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .timeline-item.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
 /* Timeline Dot - The Jewel */
@@ -207,17 +207,19 @@
     height: 380px;
     object-fit: cover;
     object-position: center top;
-    scroll-snap-align: center; /* Center snap feels better */
+    scroll-snap-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
-    transition: all 0.4s ease;
-    filter: grayscale(20%); /* Artistic touch */
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: grayscale(20%) brightness(0.9);
+    position: relative;
 }
 
 .gallery-image:hover {
-    transform: scale(1.02);
-    border-color: rgba(255, 255, 255, 0.5);
-    filter: grayscale(0%);
+    transform: scale(1.03) translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.6);
+    filter: grayscale(0%) brightness(1.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
 

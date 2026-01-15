@@ -12,10 +12,21 @@ html {
   background-color: var(--bg-color);
   color: var(--text-color);
   scroll-behavior: smooth;
-  font-size: 16px; /* Base size reset */
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* Critical for mobile */
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Prevent FOUT (Flash of Unstyled Text) */
+html:not(.fonts-loaded) {
+  opacity: 0;
+}
+
+html.fonts-loaded {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
 }
 
 body {

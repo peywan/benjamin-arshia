@@ -17,14 +17,25 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    opacity: 0.7; /* Slightly brighter base */
-    transform: scale(1);
+    opacity: 0.7;
+    transform: scale(1.05);
     will-change: transform;
-    transition: transform 0.8s ease-out; /* Smoother */
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: breathe 20s ease-in-out infinite alternate;
 }
 
 .cinematic-breaker:hover .breaker-image {
-    transform: scale(1.03); /* Subtler zoom */
+    transform: scale(1.08);
+    opacity: 0.85;
+}
+
+@keyframes breathe {
+    0% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 /* Specific adjustments based on image nature if needed */
