@@ -40,11 +40,6 @@ const FighterProfile = () => {
                         <span className="profile-label">Primary Team</span>
                         <span className="profile-value team-primary">{teams.primary}</span>
                     </div>
-
-                    <div className="profile-item full-width">
-                        <span className="profile-label">Former Team</span>
-                        <span className="profile-value team-former">{teams.former}</span>
-                    </div>
                 </div>
             </div>
         </section>
