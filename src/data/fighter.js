@@ -36,11 +36,11 @@ export const professionalRecord = [
     round: 3,
     time: "5:00",
     highlightBroadcast: true,
-    videoPoster: "/assets/safi-hq-win.jpg",
+    videoPoster: "/assets/safi-striking.jpg",
     photos: [
-      "/assets/safi-hq-win.jpg", // Winning moment
-      "/assets/safi-action-1.jpg", // Action shot
-      "/assets/safi-striking.jpg" // Striking action
+      "/assets/safi-striking.jpg", // Striking action - Position 1
+      "/assets/safi-action-1.jpg", // Action shot - Position 2
+      "/assets/safi-hq-win.jpg" // Winning moment - Position 3
     ]
   },
   {
