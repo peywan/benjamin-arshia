@@ -53,12 +53,12 @@ export const professionalRecord = [
     round: 3,
     time: "5:00",
     highlightBroadcast: true,
-    videoPoster: "/assets/kalandadze-final-win.jpg",
+    videoPoster: "/assets/nikakalandadze3.JPG",
     photos: [
-      "/assets/kalandadze-final-win.jpg", // Victory
-      "/assets/kalandadze-action-1.jpg", // Action 1
-      "/assets/nikakalandadze2.JPG", // NEW - Action 2
-      "/assets/nikakalandadze3.JPG" // NEW - Action 3
+      "/assets/nikakalandadze3.JPG", // Action 3 - Position 1
+      "/assets/kalandadze-action-1.jpg", // Action 1 - Position 2
+      "/assets/nikakalandadze2.JPG", // Action 2 - Position 3
+      "/assets/kalandadze-final-win.jpg" // Victory - Position 4
     ]
   },
   {
