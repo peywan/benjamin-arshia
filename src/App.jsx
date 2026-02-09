@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Transition from './components/Transition';
 import CinematicBreaker from './components/CinematicBreaker';
 import CinematicOverlay from './components/CinematicOverlay';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
         {/* 5. Footer */}
         <Footer />
       </div>
+      <Analytics />
     </>
   );
 }
